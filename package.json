@@ -1,0 +1,33 @@
+{
+  "name": "@in5net/konbini",
+  "version": "0.0.0",
+  "description": "Convenient stores",
+  "author": "in5net",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/in5net/konbini.git"
+  },
+  "source": "src/index.ts",
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "postinstall": "husky install",
+    "commit": "commit",
+    "build": "parcel build"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "@commitlint/prompt-cli": "^17.6.5",
+    "@parcel/packager-ts": "2.9.2",
+    "@parcel/transformer-typescript-types": "2.9.2",
+    "husky": "^8.0.3",
+    "parcel": "^2.9.2",
+    "typescript": "^5.1.3"
+  }
+}
