@@ -143,7 +143,10 @@ export function computed<T>(executor: () => T): Store<T> {
  * }, { online: false });
  * ```
  */
-export function from<T>(executor: (store: Store<T>) => any, initialValue?: T) {
+export function from<T>(
+  executor: (store: Store<T>) => any,
+  initialValue?: T,
+): Store<T> {
   const store = konbini(initialValue);
   executor(store);
   return store;
