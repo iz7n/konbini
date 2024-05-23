@@ -4,7 +4,7 @@
  * A simple single-like reactive store that can be used in Svelte
  * @example
  * ```ts
- * import { konbini, computed, from } from "@in5net/konbini";
+ * import { konbini, computed, from } from "@iz7n/konbini";
  *
  * const count = konbini(0);
  * const doubled = computed(() => count() * 2);
@@ -14,9 +14,12 @@
  */
 // This is mainly the observables in https://github.com/jbreckmckye/trkl with the Svelte store contract and a few new functions
 
+/** A function to be called when the store's value changes */
 export type Subscriber<T> = (newValue: T, oldValue?: T) => any;
+/** Represents the {@link Store.subscribe} method, which returns a function to stop listening for changes */
 export type Subscribe<T> = (subscriber: Subscriber<T>) => () => void;
 
+/** A store that can be subscribed to */
 export interface Store<T> {
   /** Get the value of the store */
   (): T;
@@ -28,7 +31,7 @@ export interface Store<T> {
   set(newValue: T): T;
   /** Set the value of the store based on the previous value */
   update(updater: (oldValue: T) => T): T;
-  /** Listen for changes to the store's value */
+  /** Listen for changes to the store's value. This returns a function that can be called to stop listening for changes */
   subscribe: Subscribe<T>;
   /** Stop listening for changes to the store's value */
   unsubscribe(subscriber: Subscriber<any>): void;
