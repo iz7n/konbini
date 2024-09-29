@@ -1,6 +1,6 @@
 {
   "$schema": "https://deno.land/x/deno/cli/schemas/config-file.v1.json",
-  "name": "@iz7n/konbini",
+  "name": "@in5net/konbini",
   "version": "0.1.1",
   "exports": "./mod.ts",
   "lint": {
